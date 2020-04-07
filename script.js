@@ -1,17 +1,23 @@
-const digitCodes = ["Backquote", "Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0", "Minus", "Equal", "Backspace", "Tab", "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY", "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight", "Backslash", "Delete", "CapsLock", "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH", "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote", "Enter", "ShiftLeft", "IntlBackslash", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB", "KeyN", "KeyM", "Comma", "Period", "Slash", "ArrowUp", "ShiftRight", "ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight", "ArrowLeft", "ArrowDown", "ArrowRight", "ControlRight"],
-  russianKeys = ["ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "\\", "Del", "CapsLock", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "Enter", "Shift", '\\', "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", ".", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"],
-  russianShift = ["Ё", "!", "\"", "№", ";", "%", ":", "?", "*", "(", ")", "_", "+", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", "/", "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", '/', "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", ",", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"],
-  russianCaps = ["Ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", '\\', "Del", "CapsLock", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Enter", "Shift", '\\', "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", ".", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"],
-  englishKeys = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\", "Del", "CapsLock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "Enter", "Shift", "\\", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"],
-  englishShift = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "}", "|", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "Enter", "Shift", "|", "Z", "X", "C", "V", "B", "N", "M", "<", ">", "?", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"],
-  englishCaps = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace", "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\", "Del", "CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", "\"", "Enter", "Shift", "\\", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "&uArr;", "Shift", "Ctrl", "Win", "Alt", "Space", "Alt", "&lArr;", "&dArr;", "&rArr;", "Ctrl"];
+const digitCodes = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace', 'Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'Delete', 'CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter', 'ShiftLeft', 'IntlBackslash', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight'];
+const russianKeys = ['ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', '\\', 'Del', 'CapsLock', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'Enter', 'Shift', '\\', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', '.', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
+const russianShift = ['Ё', '!', '"', '№', ';', '%', ':', '?', '*', '(', ')', '_', '+', 'Backspace', 'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '/', 'Del', 'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter', 'Shift', '/', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', ',', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
+const russianCaps = ['Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\', 'Del', 'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter', 'Shift', '\\', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
+const englishKeys = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', 'Del', 'CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter', 'Shift', '\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
+const englishShift = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', 'Backspace', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|', 'Del', 'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter', 'Shift', '|', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
+const englishCaps = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\', 'Del', 'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"', 'Enter', 'Shift', '\\', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '&uArr;', 'Shift', 'Ctrl', 'Win', 'Alt', 'Space', 'Alt', '&lArr;', '&dArr;', '&rArr;', 'Ctrl'];
 
 
-let caps = false,
-  shift = false,
-  language = sessionStorage.getItem('keyboardLanguage') ? sessionStorage.getItem('keyboardLanguage') : 'ru';
+let caps = false;
+let shift = false;
+let language = sessionStorage.getItem('keyboardLanguage') ? sessionStorage.getItem('keyboardLanguage') : 'ru';
 
-//----------------------отрисовка клавиатуры------------------------------
+// ---------------------------создание textarea---------------------------------------------
+const textArea = document.createElement('textarea');
+// textArea.setAttribute('autofocus', '');
+textArea.setAttribute('placeholder', 'Пожалуйста, введите текст.\nПереключение языка - Alt + Shift');
+document.body.prepend(textArea);
+
+// ----------------------отрисовка клавиатуры------------------------------
 const initKeyboard = () => {
   if (document.activeElement !== textArea) {
     textArea.focus();
@@ -36,8 +42,8 @@ const initKeyboard = () => {
   let keyboard = document.querySelector('.keyboard');
   if (keyboard) {
     let brS = 0;
-    for (let i = 0; i < keyboard.children.length; i++) {
-      if (keyboard.children[i].nodeName !== "DIV") {
+    for (let i = 0; i < keyboard.children.length; i += 1) {
+      if (keyboard.children[i].nodeName !== 'DIV') {
         brS += 1;
       } else {
         keyboard.children[i].innerHTML = keyboardKeys[i - brS];
@@ -48,8 +54,8 @@ const initKeyboard = () => {
     let markup = '';
 
     keyboard.classList.add('keyboard');
-    //keyboard.addEventListener("click", ev => clickKeyboard(ev));
-    keyboard.addEventListener("mousedown", ev => {
+    // keyboard.addEventListener("click", ev => clickKeyboard(ev));
+    keyboard.addEventListener('mousedown', (ev) => {
       ev.preventDefault();
     });
 
@@ -76,7 +82,7 @@ const initKeyboard = () => {
       } else if (elem === 'MetaLeft') {
         addClass = 'meta special';
       } else if (elem === 'AltLeft') {
-        addClass = 'altLeft special'
+        addClass = 'altLeft special';
       } else if (elem === 'Space') {
         addClass = 'space';
       } else if (elem === 'AltRight') {
@@ -91,143 +97,142 @@ const initKeyboard = () => {
         addClass = 'controlRight special';
       }
 
-      //----------------------------Вставка символов----------------------------------------
+      // ----------------------------Вставка символов----------------------------------------
       markup += `<div class="key ${addClass}" data-code="${elem}">${keyboardKeys[index]}</div>`;
       if (index === 13 || index === 28 || index === 41 || index === 55) {
-        markup += '<br>'
+        markup += '<br>';
       }
     });
 
     keyboard.innerHTML = markup;
-    let keyboardExist = document.querySelector('.keyboard');
-    keyboardExist ? keyboardExist.replaceWith(keyboard) : textArea.after(keyboard);
+    const keyboardExist = document.querySelector('.keyboard');
+    if (keyboardExist) {
+      keyboardExist.replaceWith(keyboard);
+    } else {
+      textArea.after(keyboard);
+    }
   }
 };
 
-//---------------------------создание textarea---------------------------------------------
-let textArea = document.createElement('textarea');
-//textArea.setAttribute('autofocus', '');
-textArea.setAttribute('placeholder', 'Пожалуйста, введите текст.\nПереключение языка - Alt + Shift');
-document.body.prepend(textArea);
-
 initKeyboard();
-//---------------------------эмуляция клика--------------------
+
+// ---------------------------эмуляция клика--------------------
 const emulateClick = (ev) => {
   if (document.activeElement !== textArea) {
     textArea.focus();
   }
 
   ev.preventDefault();
-  let newEv = {...ev};
+  const newEv = { ...ev };
   newEv.shiftKey = ev.shiftKey;
   newEv.altKey = ev.altKey;
   newEv.repeat = ev.repeat;
   newEv.target = document.querySelector(`[data-code=${ev.code}]`);
   return newEv;
 };
-//---------------------------подсветка нажатия--------------------
+// ---------------------------подсветка нажатия--------------------
 const highlightKeys = (ev) => {
-  let currentKey = ev.target;
-  if (currentKey && digitCodes.includes(currentKey.getAttribute(`data-code`))) {
+  const currentKey = ev.target;
+  if (currentKey && digitCodes.includes(currentKey.getAttribute('data-code'))) {
     currentKey.classList.add('current-key');
   }
 };
 
 const clearHighlightKeys = (ev) => {
-  let currentKey = ev.target;
-  let currentKeyCode = currentKey ? currentKey.getAttribute('data-code') : '';
+  const currentKey = ev.target;
+  const currentKeyCode = currentKey ? currentKey.getAttribute('data-code') : '';
   if (currentKeyCode === ('ShiftLeft' || 'ShiftRight')) {
     shift = false;
     initKeyboard();
   }
   if (currentKeyCode !== 'CapsLock' || caps === false) {
     setTimeout(() => {
-      currentKey ? currentKey.classList.remove('current-key') : '';
-    }, 150)
+      if (currentKey) {
+        currentKey.classList.remove('current-key');
+      }
+    }, 150);
   }
 };
 
-document.addEventListener("keyup", ev => clearHighlightKeys(emulateClick(ev)));
-document.addEventListener("keydown", ev => clickKeyboard(emulateClick(ev)));
-document.addEventListener("mousedown", highlightKeys);
-document.addEventListener("mousedown", ev => clickKeyboard(ev));
-document.addEventListener("mouseup", ev => clearHighlightKeys(ev));
-
-//---------------------------клик по клавиатуре--------------------
+// ---------------------------клик по клавиатуре--------------------
 const clickKeyboard = (ev) => {
   highlightKeys(ev);
   if (ev.shiftKey && ev.altKey && !ev.repeat) {
     language = (language === 'ru') ? 'en' : 'ru';
+    return null;
   }
 
-  let currentKeyCode = ev.target ? ev.target.getAttribute('data-code') : '';
+  const currentKeyCode = ev.target ? ev.target.getAttribute('data-code') : '';
   const caret = textArea.selectionStart;
 
-  //------------------- backspace -----------------------------
+  // ------------------- backspace -----------------------------
   if (currentKeyCode === 'Backspace' && caret > 0) {
     textArea.value = textArea.value.substring(0, caret - 1) + textArea.value.substring(caret);
     textArea.setSelectionRange(caret - 1, caret - 1);
   }
-  //--------------------delete---------------------------------
+  // --------------------delete---------------------------------
   if (currentKeyCode === 'Delete' && textArea.selectionStart < textArea.value.length) {
     textArea.value = textArea.value.substring(0, caret) + textArea.value.substring(caret + 1);
     textArea.setSelectionRange(caret, caret);
   }
-  //--------------------enter---------------------------------
+  // --------------------enter---------------------------------
   if (currentKeyCode === 'Enter') {
-    textArea.value = textArea.value.substring(0, caret) + '\n' + textArea.value.substring(caret);
+    textArea.value = `${textArea.value.substring(0, caret)}\n${textArea.value.substring(caret)}`;
     textArea.setSelectionRange(caret + 1, caret + 1);
-    return null
+    return null;
   }
-  //--------------------shift---------------------------------
+  // --------------------shift---------------------------------
   if (currentKeyCode === ('ShiftLeft' || 'ShiftRight')) {
     if (!ev.repeat) {
       shift = true;
       initKeyboard();
     }
   }
-  //--------------------capsLock---------------------------------
+  // --------------------capsLock---------------------------------
   if (currentKeyCode === 'CapsLock') {
     caps = !caps;
     initKeyboard();
   }
-  //--------------------tab---------------------------------
+  // --------------------tab---------------------------------
   if (currentKeyCode === 'Tab') {
-    tabFunction(ev);
+    const selection = textArea.selectionStart;
+    textArea.value = `${textArea.value.substring(0, selection)}    ${textArea.value.substring(selection)}`;
+    textArea.setSelectionRange(selection + 4, selection + 4);
   }
-  //--------------------arrowLeft---------------------------------
+  // --------------------arrowLeft---------------------------------
   if (currentKeyCode === 'ArrowLeft') {
     textArea.setSelectionRange(caret - 1, caret - 1);
   }
-  //--------------------arrowRight---------------------------------
+  // --------------------arrowRight---------------------------------
   if (currentKeyCode === 'ArrowRight') {
     textArea.setSelectionRange(caret + 1, caret + 1);
   }
-  //--------------------arrowDown---------------------------------
+  // --------------------arrowDown---------------------------------
   if (currentKeyCode === 'ArrowDown') {
     const nextLine = textArea.value.indexOf('\n', caret);
     if (nextLine !== -1) {
-      textArea.setSelectionRange(nextLine + caret + 1, nextLine + caret + 1)
+      textArea.setSelectionRange(nextLine + caret + 1, nextLine + caret + 1);
     }
   }
-  //--------------------arrowUp---------------------------------
+  // --------------------arrowUp---------------------------------
   if (currentKeyCode === 'ArrowUp') {
     const prevLine = textArea.value.lastIndexOf('\n', caret);
     if (prevLine !== -1) {
-      textArea.setSelectionRange(caret - prevLine - 1, caret - prevLine - 1)
+      textArea.setSelectionRange(caret - prevLine - 1, caret - prevLine - 1);
     }
   }
-  //--------------------space and letters---------------------------------
+  // --------------------space and letters---------------------------------
   if (ev.target && [...ev.target.classList].indexOf('special') === -1 && [...ev.target.classList].indexOf('key') !== -1) {
     let letter = ev.target.innerHTML;
     letter = letter === 'Space' ? ' ' : letter;
     textArea.value = textArea.value.substring(0, caret) + letter + textArea.value.substring(caret);
     textArea.setSelectionRange(caret + 1, caret + 1);
   }
+  return null;
 };
 
-const tabFunction = () => {
-  let selection = textArea.selectionStart;
-  textArea.value = textArea.value.substring(0, selection) + '    ' + textArea.value.substring(selection);
-  textArea.setSelectionRange(selection + 4, selection + 4);
-};
+document.addEventListener('keyup', (ev) => clearHighlightKeys(emulateClick(ev)));
+document.addEventListener('keydown', (ev) => clickKeyboard(emulateClick(ev)));
+document.addEventListener('mousedown', highlightKeys);
+document.addEventListener('mousedown', (ev) => clickKeyboard(ev));
+document.addEventListener('mouseup', (ev) => clearHighlightKeys(ev));
