@@ -209,16 +209,31 @@ const clickKeyboard = (ev) => {
   }
   // --------------------arrowDown---------------------------------
   if (currentKeyCode === 'ArrowDown') {
-    const nextLine = textArea.value.indexOf('\n', caret);
-    if (nextLine !== -1) {
-      textArea.setSelectionRange(nextLine + caret + 1, nextLine + caret + 1);
+    const currLine = textArea.value.indexOf('\n', caret);
+    const nextLine = textArea.value.indexOf('\n', currLine + 1) === -1 ? textArea.value.length
+      : textArea.value.indexOf('\n', currLine + 1);
+    const prevLine = textArea.value.lastIndexOf('\n', caret - 1) === -1 ? -1
+      : textArea.value.lastIndexOf('\n', caret - 1);
+
+    if (currLine !== -1) {
+      if (caret - prevLine > nextLine - currLine) {
+        textArea.setSelectionRange(nextLine, nextLine);
+      } else {
+        textArea.setSelectionRange(currLine + caret - prevLine, currLine + caret - prevLine);
+      }
     }
   }
   // --------------------arrowUp---------------------------------
   if (currentKeyCode === 'ArrowUp') {
-    const prevLine = textArea.value.lastIndexOf('\n', caret);
-    if (prevLine !== -1) {
-      textArea.setSelectionRange(caret - prevLine - 1, caret - prevLine - 1);
+    const nextLine = textArea.value.lastIndexOf('\n', caret);
+    const prevLine = textArea.value.lastIndexOf('\n', nextLine - 1);
+
+    if (nextLine !== -1) {
+      if (caret - nextLine > nextLine - prevLine) {
+        textArea.setSelectionRange(nextLine, nextLine);
+      } else {
+        textArea.setSelectionRange(prevLine + caret - nextLine, prevLine + caret - nextLine);
+      }
     }
   }
   // --------------------space and letters---------------------------------
