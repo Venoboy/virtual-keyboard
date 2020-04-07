@@ -14,7 +14,8 @@ let language = sessionStorage.getItem('keyboardLanguage') ? sessionStorage.getIt
 // ---------------------------создание textarea---------------------------------------------
 const textArea = document.createElement('textarea');
 // textArea.setAttribute('autofocus', '');
-textArea.setAttribute('placeholder', 'Пожалуйста, введите текст.\nПереключение языка - Alt + Shift');
+textArea.setAttribute('placeholder', 'Пожалуйста, введите текст.\nПереключение языка - Alt + Shift'
+  + '\nКлавитура создавалась под Windows');
 document.body.prepend(textArea);
 
 // ----------------------отрисовка клавиатуры------------------------------
@@ -99,7 +100,8 @@ const initKeyboard = () => {
 
       // ----------------------------Вставка символов----------------------------------------
       markup += `<div class="key ${addClass}" data-code="${elem}">${keyboardKeys[index]}</div>`;
-      if (index === 13 || index === 28 || index === 41 || index === 55) {
+      const lineBreaks = [13, 28, 41, 55];
+      if (lineBreaks.includes(index)) {
         markup += '<br>';
       }
     });
