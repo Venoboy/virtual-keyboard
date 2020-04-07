@@ -40,80 +40,83 @@ const initKeyboard = () => {
       keyboardKeys = englishShift;
     }
   }
-  let keyboard = document.querySelector('.keyboard');
-  if (keyboard) {
-    let brS = 0;
-    for (let i = 0; i < keyboard.children.length; i += 1) {
-      if (keyboard.children[i].nodeName !== 'DIV') {
-        brS += 1;
-      } else {
-        keyboard.children[i].innerHTML = keyboardKeys[i - brS];
+  const checkKeyboardStatus = () => {
+    let keyboard = document.querySelector('.keyboard');
+    if (keyboard) {
+      let lineBreaks = 0;
+      for (let i = 0; i < keyboard.children.length; i += 1) {
+        if (keyboard.children[i].nodeName !== 'DIV') {
+          lineBreaks += 1;
+        } else {
+          keyboard.children[i].innerHTML = keyboardKeys[i - lineBreaks];
+        }
       }
-    }
-  } else {
-    keyboard = document.createElement('div');
-    let markup = '';
-
-    keyboard.classList.add('keyboard');
-    // keyboard.addEventListener("click", ev => clickKeyboard(ev));
-    keyboard.addEventListener('mousedown', (ev) => {
-      ev.preventDefault();
-    });
-
-    digitCodes.forEach((elem, index) => {
-      let addClass = '';
-      if (elem === 'Backspace') {
-        addClass = 'backspace special';
-      } else if (elem === 'Tab') {
-        addClass = 'tab special';
-      } else if (elem === 'Delete') {
-        addClass = 'delete special';
-      } else if (elem === 'CapsLock') {
-        addClass = 'capsLock special';
-      } else if (elem === 'Enter') {
-        addClass = 'enter special';
-      } else if (elem === 'ShiftLeft') {
-        addClass = 'shiftLeft special';
-      } else if (elem === 'ArrowUp') {
-        addClass = 'arrowUp special';
-      } else if (elem === 'ShiftRight') {
-        addClass = 'shiftRight special';
-      } else if (elem === 'ControlLeft') {
-        addClass = 'controlLeft special';
-      } else if (elem === 'MetaLeft') {
-        addClass = 'meta special';
-      } else if (elem === 'AltLeft') {
-        addClass = 'altLeft special';
-      } else if (elem === 'Space') {
-        addClass = 'space';
-      } else if (elem === 'AltRight') {
-        addClass = 'altRight special';
-      } else if (elem === 'ArrowLeft') {
-        addClass = 'arrowLeft special';
-      } else if (elem === 'ArrowRight') {
-        addClass = 'arrowRight special';
-      } else if (elem === 'ArrowDown') {
-        addClass = 'arrowDown special';
-      } else if (elem === 'ControlRight') {
-        addClass = 'controlRight special';
-      }
-
-      // ----------------------------Вставка символов----------------------------------------
-      markup += `<div class="key ${addClass}" data-code="${elem}">${keyboardKeys[index]}</div>`;
-      const lineBreaks = [13, 28, 41, 55];
-      if (lineBreaks.includes(index)) {
-        markup += '<br>';
-      }
-    });
-
-    keyboard.innerHTML = markup;
-    const keyboardExist = document.querySelector('.keyboard');
-    if (keyboardExist) {
-      keyboardExist.replaceWith(keyboard);
     } else {
-      textArea.after(keyboard);
+      keyboard = document.createElement('div');
+      let markup = '';
+
+      keyboard.classList.add('keyboard');
+      // keyboard.addEventListener("click", ev => clickKeyboard(ev));
+      keyboard.addEventListener('mousedown', (ev) => {
+        ev.preventDefault();
+      });
+
+      digitCodes.forEach((elem, index) => {
+        let addClass = '';
+        if (elem === 'Backspace') {
+          addClass = 'backspace special';
+        } else if (elem === 'Tab') {
+          addClass = 'tab special';
+        } else if (elem === 'Delete') {
+          addClass = 'delete special';
+        } else if (elem === 'CapsLock') {
+          addClass = 'capsLock special';
+        } else if (elem === 'Enter') {
+          addClass = 'enter special';
+        } else if (elem === 'ShiftLeft') {
+          addClass = 'shiftLeft special';
+        } else if (elem === 'ArrowUp') {
+          addClass = 'arrowUp special';
+        } else if (elem === 'ShiftRight') {
+          addClass = 'shiftRight special';
+        } else if (elem === 'ControlLeft') {
+          addClass = 'controlLeft special';
+        } else if (elem === 'MetaLeft') {
+          addClass = 'meta special';
+        } else if (elem === 'AltLeft') {
+          addClass = 'altLeft special';
+        } else if (elem === 'Space') {
+          addClass = 'space';
+        } else if (elem === 'AltRight') {
+          addClass = 'altRight special';
+        } else if (elem === 'ArrowLeft') {
+          addClass = 'arrowLeft special';
+        } else if (elem === 'ArrowRight') {
+          addClass = 'arrowRight special';
+        } else if (elem === 'ArrowDown') {
+          addClass = 'arrowDown special';
+        } else if (elem === 'ControlRight') {
+          addClass = 'controlRight special';
+        }
+
+        // ----------------------------Вставка символов----------------------------------------
+        markup += `<div class="key ${addClass}" data-code="${elem}">${keyboardKeys[index]}</div>`;
+        const lineBreaks = [13, 28, 41, 55];
+        if (lineBreaks.includes(index)) {
+          markup += '<br>';
+        }
+      });
+
+      keyboard.innerHTML = markup;
+      const keyboardExist = document.querySelector('.keyboard');
+      if (keyboardExist) {
+        keyboardExist.replaceWith(keyboard);
+      } else {
+        textArea.after(keyboard);
+      }
     }
-  }
+  };
+  checkKeyboardStatus();
 };
 
 initKeyboard();
@@ -132,6 +135,8 @@ const emulateClick = (ev) => {
   newEv.target = document.querySelector(`[data-code=${ev.code}]`);
   return newEv;
 };
+
+
 // ---------------------------подсветка нажатия--------------------
 const highlightKeys = (ev) => {
   const currentKey = ev.target;
